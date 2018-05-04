@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registrar Agência{% endblock %}
+
+{% block body %}
+
+Registrar Agência
+
+<form method="post" action="{{ path('agencia_registrar') }}">
+    CGC <input type="text" name="cgc" placeholder="0001"/> <br>
+    Nome <input type="text" name="nome" placeholder="Matriz"/> <br>
+    <input type="submit" value="Enviar"/>
+</form>
+
+<a href="{{ path('agencia_listar') }}">Listar</a>
+
+{% endblock %}

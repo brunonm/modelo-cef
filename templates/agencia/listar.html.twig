@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Listar Agências{% endblock %}
+
+{% block body %}
+
+Lista de Agência
+
+<table>
+    <tr>
+        <th>#</th>
+        <th>CGC</th>
+        <th>Agencia</th>
+    </tr>
+    {% for agencia in agencias %}
+        <tr>
+            <td>{{ agencia.id }}</td>
+            <td>{{ agencia.cgc }}</td>
+            <td>{{ agencia.nome }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<a href="{{ path('agencia') }}">Voltar</a>
+
+{% endblock %}

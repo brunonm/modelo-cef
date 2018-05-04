@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\AgenciaRepository")
  */
 class Agencia
 {
@@ -81,4 +81,19 @@ class Agencia
         }
         return str_pad(++$ultimoNumero, 11, '0', STR_PAD_LEFT);
     }
+
+    public function getId(): string
+    {
+        return $this->id;
+    }
+
+    public function getCgc() : string
+    {
+        return $this->cgc;
+    }
+
+    public function getNome() : string
+    {
+        return $this->nome;
+    }    
 }
